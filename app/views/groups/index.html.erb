@@ -5,11 +5,11 @@
     <div class="card-family">
       <h3><%= group.name %></h3>
         <div>
-        <% group.people.each do |person| %>
-          <div class="avatar-person">
-            <i class="fas fa-user-ninja"></i>
-            <p> <%= person.firstname %></p>
-          </div>
+          <% group.people.each do |person| %>
+            <div class="avatar-person">
+              <i class="fas fa-user-ninja"></i>
+              <p> <%= person.firstname %></p>
+            </div>
           <% end %>
         </div>
         <a href="#"><i class="fas fa-user-plus"></i></a>
