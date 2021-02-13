@@ -1,0 +1,18 @@
+.button-trk {
+  margin: 4px;
+  text-decoration: none;
+  background-color: $light-turqoise;
+  color: $gray;
+  padding: 8px 24px;
+  border-radius: 4px;
+  transition: 0.3s;
+  font-weight: lighter;
+
+  &:hover {
+    text-decoration: none;
+    color: $black;
+    background-color: $dark-turqoise;
+
+  }
+
+}
