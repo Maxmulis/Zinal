@@ -1,14 +1,19 @@
 .card-family {
 
-  margin: 16px 8px;
-  width: 160px;
-  background-color: $light-turqoise;
-  // border: solid 1px black;
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  height: 300px;
+  margin: 1rem;
+  padding: 16px;
+  position: relative;
+  width: 300px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
   div {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: fit-content;
     // border: solid 1px black;
     margin: auto;
