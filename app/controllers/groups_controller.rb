@@ -1,19 +1,21 @@
 class GroupsController < ApplicationController
   skip_before_action :authenticate_user!
   def index
-    @groups = Group.all.sort_by(&:name)
-  end
-
-  def new
     @group = Group.new
+    if params[:query].present?
+      @groups = Group.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @groups = Group.all.sort_by(&:name)
+    end
   end
 
   def create
     @group = Group.new(group_params)
     if @group.save
-      redirect_to group_path(@group)
+      # @groups = Group.all.sort_by(&:name)
+      redirect_to groups_path, notice: "#{@group.name.capitalize} wurde gespeichert!"
     else
-      render :new
+      redirect_to groups_path, alert: @group.errors.full_messages
     end
   end
 
