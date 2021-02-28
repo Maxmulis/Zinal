@@ -15,7 +15,8 @@
         <div>
         <% group.people.each do |person| %>
           <div class="card-person">
-            <%= image_tag 'george.jpeg', class: 'avatar' %>
+            <%= cl_image_tag(person.photo.key,
+            crop: :thumb, gravity: :face, class: 'avatar') %>
             <p><%= person.firstname %> </p>
           </div>
           <% end %>
