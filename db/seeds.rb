@@ -9,7 +9,7 @@
 Person.destroy_all
 Group.destroy_all
 
-5.times do
+30.times do
   puts "Creating a group"
   group = Group.create(
     name: Faker::Name.last_name,
