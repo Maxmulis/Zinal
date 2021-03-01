@@ -1,12 +1,10 @@
-<div class="container">
-  <%= simple_form_for @group do |f| %>
-  <%= f.input :country, priority: [ "Switzerland" , "Germany" ], locale: 'de', label: 'Land' %>
-  <%= f.input :name, label: 'Familienname' %>
-  <%= f.input :street, label: 'Straße' %>
-  <%= f.input :number, label: 'Hausnummer' %>
-  <%= f.input :zip, label: 'Postleitzahl' %>
-  <%= f.input :town, label: 'Stadt' %>
-  <%= f.input :language, label: 'Muttersprache', input: 'Deutsch' %>
-  <%= f.button :submit, 'Familie hinzufügen' %>
-  <% end %>
-</div>
+<%= simple_form_for @group do |f| %>
+<%= f.input :country, priority: [ "Switzerland" , "Germany" ], locale: 'de', label: 'Land' %>
+<%= f.input :name, label: 'Familienname' %>
+<%= f.input :street, label: 'Straße' %>
+<%= f.input :number, label: 'Hausnummer' %>
+<%= f.input :zip, label: 'Postleitzahl' %>
+<%= f.input :town, label: 'Stadt' %>
+<%= f.input :language, label: 'Muttersprache', input: 'Deutsch' %>
+<%= f.button :submit, 'Familie hinzufügen' %>
+<% end %>
