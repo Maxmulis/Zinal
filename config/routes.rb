@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'people/create'
+  get 'people/edit'
+  get 'people/update'
   root to: 'groups#index'
   devise_for :users
   resources :groups, only: [ :index, :create, :show ]

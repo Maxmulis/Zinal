@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   skip_before_action :authenticate_user!
   def index
+    @person = Person.new
     @group = Group.new
     if params[:query].present?
       @groups = Group.where("name ILIKE ?", "%#{params[:query]}%")
