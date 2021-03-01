@@ -1,11 +1,12 @@
 <div class="container">
   <h1>People#index</h1>
-  <%= form_tag groups_path, method: :get, remote: true do %>
+  <%= form_tag groups_path, method: :get do %>
     <%= text_field_tag :query,
     params[:query],
     class: "form-control",
     placeholder: "Familie suchen"
   %>
+  <%#= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
   <div class="row">
     <div class="groups col-12 col-lg-8">
