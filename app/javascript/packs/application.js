@@ -27,8 +27,10 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { addressAutocomplete } from '../components/address_autocomplete';
 
 document.addEventListener('turbolinks:load', () => {
+  addressAutocomplete();
   // Call your functions here, e.g:
   // initSelect2();
 });
