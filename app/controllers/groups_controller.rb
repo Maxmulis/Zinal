@@ -13,7 +13,7 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
     if @group.save
       # @groups = Group.all.sort_by(&:name)
-      redirect_to groups_path, notice: "#{@group.name.capitalize} wurde gespeichert!"
+      redirect_to groups_path(query: @group.name), notice: "#{@group.name.capitalize} wurde gespeichert!"
     else
       redirect_to groups_path, alert: @group.errors.full_messages
     end
