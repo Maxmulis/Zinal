@@ -1,0 +1,22 @@
+table {
+  border: 1px solid black;
+}
+
+td {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+th {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+tr {
+  background-color: white;
+
+  &:hover {
+    background-color: $light-gray;
+    transition: 0.1s;
+  }
+}

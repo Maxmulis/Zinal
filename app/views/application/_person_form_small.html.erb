@@ -1,5 +1,7 @@
-<%= simple_form_for @person do |f| %>
+<%= simple_form_for [ @group, @person ] do |f| %>
 <%= f.input :firstname %>
-<%= f.input :birthdate %>
+<%= f.input :birthdate, as: :date, start_year: Date.today.year - 100,
+                              end_year: Date.today.year,
+                              order: [:day, :month, :year] %>
 <%= f.button :submit %>
 <% end %>

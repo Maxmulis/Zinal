@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Alle Teilnehmenden</h1>
+  <div class="row">
+    <div class="groups">
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Vorname</th>
+          <th>Straße</th>
+          <th>Hausnummer</th>
+          <th>Postleitzahl</th>
+          <th>Stadt</th>
+          <th>Land</th>
+          <th>Geburtsdatum</th>
+        </tr>
+          <% @people.each do |person| %>
+            <tr>
+              <td><%= link_to person.group.name, edit_group_path(person.group) %></td>
+              <td><%= person.firstname %></td>
+              <td><%= person.group.street %></td>
+              <td><%= person.group.number %></td>
+              <td><%= person.group.zip %></td>
+              <td><%= person.group.town %></td>
+              <td><%= person.group.country %></td>
+              <td><%= person.birthdate %></td>
+            </tr>
+          <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+

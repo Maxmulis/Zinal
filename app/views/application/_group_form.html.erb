@@ -1,10 +1,9 @@
-<%= simple_form_for @group do |f| %>
-<%= f.input :country, priority: [ "Switzerland" , "Germany" ], locale: 'de', label: 'Land' %>
+<%= simple_form_for @group, defaults: { input_html: { class: 'form-control-sm' } } do |f| %>
+<%= f.input :country,  priority: [ "Switzerland" , "Germany" ], locale: 'de', label: 'Land' %>
 <%= f.input :name, label: 'Familienname' %>
 <%= f.input :street, label: 'Straße' %>
 <%= f.input :number, label: 'Hausnummer' %>
 <%= f.input :zip, label: 'Postleitzahl' %>
 <%= f.input :town, label: 'Stadt' %>
-<%= f.input :language, label: 'Muttersprache', input: 'Deutsch' %>
-<%= f.button :submit, 'Familie hinzufügen' %>
+<%= f.button :submit, 'Familie hinzufügen', class: 'btn btn-success' %>
 <% end %>

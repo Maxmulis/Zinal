@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>People#index</h1>
+  <h1>Alle Familien</h1>
   <div class="row">
     <div class="col-12 col-lg-8">
       <%= form_tag groups_path, method: :get do %>
@@ -8,30 +8,30 @@
         class: "form-control",
         placeholder: "Familie suchen"
       %>
+      <% end %>
     </div>
-  </div>
-  <% end %>
-  <div class="row">
     <div class="groups col-12 col-lg-8">
       <% @groups.each do |group| %>
-      <div class="card-family">
-      <h3><%= group.name %></h3>
+      <div class="card-white-small">
+      <h3><%= link_to group.name, edit_group_path(group) %></h3>
         <div>
         <% group.people.each do |person| %>
           <div class="card-person">
-            <%= cl_image_tag(person.photo.key,
-            crop: :thumb, gravity: :face, class: 'avatar') %>
-            <p><%= person.firstname %> </p>
+            <% if person.photo.attached? %>
+                 <%= link_to(cl_image_tag(person.photo.key, class: 'avatar-mid'), edit_person_path(person)) %>
+            <% else %>
+                <%= link_to(cl_image_tag("https://res.cloudinary.com/dxtj8yhxs/image/upload/v1614959650/Avatar-Grey-Account-User-Person-Operating-System-1699635_sgbdoo.png", crop: :thumb, gravity: :face, class: 'avatar-mid'), edit_person_path(person)) %>
+            <% end %>
+            <p><%= link_to person.firstname, edit_person_path(person) %> </p>
           </div>
           <% end %>
-          <!-- <div class="form">
-            <#%= render 'person_form_small' %>
-          </div> -->
         </div>
+        <%= link_to "Person hinzufügen", new_group_person_path(group), class: "btn btn-success mt-2" %>
       </div>
       <% end %>
     </div>
-    <div class="form col-lg-4">
+    <div class="card-white-large form col-lg-4">
+      <h3>Neue Familie hinzufügen</h3>
       <%= render 'group_form' %>
     </div>
   </div>
