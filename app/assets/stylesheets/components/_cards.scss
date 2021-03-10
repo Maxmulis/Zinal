@@ -11,20 +11,51 @@
   width: 300px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
-  div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: fit-content;
-    // border: solid 1px black;
-    margin: auto;
-  }
-
   h3 {
     margin: 8px 8px;
     text-align: center;
   }
+
+
 }
+
+.card-address {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+
+  p {
+    margin: 0;
+    line-height: 1.2;
+    font-size: smaller;
+  }
+
+  i {
+    position: absolute;
+    top: -7px;
+    left: 253px;
+    color: lightblue;
+
+    &:hover {
+      color: $blue;
+      transition: 0.2s;
+    }
+  }
+}
+
+
+.card-people {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: fit-content;
+    margin: auto;
+    margin-top: 4px;
+    border-top: solid 1px grey;
+  }
 
 .card-white-large {
   background: #fff;
@@ -42,6 +73,7 @@
     margin: 1rem 1rem;
     text-align: center;
   }
+
 }
 
 
