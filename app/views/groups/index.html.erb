@@ -13,8 +13,16 @@
     <div class="groups col-12 col-lg-8">
       <% @groups.each do |group| %>
       <div class="card-white-small">
-      <h3><%= link_to group.name, edit_group_path(group) %></h3>
-        <div>
+        <div class="card-address">
+          <h3><%= group.name %></h3>
+          <p><%= group.street %> <%= group.number %></p>
+          <p><%= group.zip %> <%= group.town %></p>
+          <%= link_to(edit_group_path(group)) do  %>
+            <i class="far fa-edit"></i>
+            <% end %>
+
+        </div>
+        <div class="card-people">
         <% group.people.each do |person| %>
           <div class="card-person">
             <% if person.photo.attached? %>
