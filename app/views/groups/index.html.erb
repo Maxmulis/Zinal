@@ -12,16 +12,10 @@
     </div>
 
     <div class="groups col-12 col-lg-8">
-        <%= render partial: 'groups/group_address', collection: @groups, layout: 'box' %>
-          <!-- <div class="card-white-small"> -->
-          <!-- <div class="card-people">
-            <%# group.people.each do |person| %>
-              <#%= render 'people/people_avatars', person: person %>
-            <%# end %>
-          </div> -->
-          <%= link_to "Person hinzufügen", new_group_person_path(group), class: "btn btn-success mt-2" %>
-        <!-- </div> -->
-      <%# end %>
+      <%= turbo_stream_from "groups" %>
+      <%= turbo_frame_tag "groups" do %>
+        <%= render @groups %>
+      <% end %>
     </div>
 
     <div class="card-white-large form col-lg-4">
