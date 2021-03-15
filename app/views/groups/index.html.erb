@@ -12,10 +12,12 @@
     </div>
 
     <div class="groups col-12 col-lg-8">
-      <%= turbo_stream_from "groups" %>
-      <%= turbo_frame_tag "groups" do %>
-        <%= render @groups %>
-      <% end %>
+      <div class="row">
+        <%= render partial: 'groups/group_card', collection: @groups %>
+      </div>
+      <%#= turbo_frame_tag "groups" do %>
+      <%#= turbo_stream_from "groups" %>
+      <%# end %>
     </div>
 
     <div class="card-white-large form col-lg-4">

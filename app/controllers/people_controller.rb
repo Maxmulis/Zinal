@@ -26,6 +26,16 @@ class PeopleController < ApplicationController
   def update
   end
 
+  def adults
+    @group = Group.find(params[:group_id])
+    @people = @group.people.select { |person| person.adult? }
+  end
+
+  def kids
+    @group = Group.find(params[:group_id])
+    @people = @group.people.select { |person| person.kid? }
+  end
+
   private
 
   def person_params

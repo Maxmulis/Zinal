@@ -29,7 +29,6 @@ import "bootstrap";
 import { addressAutocomplete } from '../components/address_autocomplete';
 
 document.addEventListener('turbo:load', () => {
-  console.log("turbo!")
   addressAutocomplete();
   // Call your functions here, e.g:
   // initSelect2();
