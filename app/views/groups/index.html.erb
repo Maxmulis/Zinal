@@ -15,7 +15,7 @@
       <div class="row">
         <%= turbo_stream_from "groups" %>
         <%= turbo_frame_tag "groups" do %>
-            <%= render partial: 'group', collection: @groups %>
+            <%= render partial: 'groups/group', collection: @groups %>
         <% end %>
       </div>
     </div>

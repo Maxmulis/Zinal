@@ -1,6 +1,6 @@
 <div class="card-white-small text-center">
   <div class="card-header">
-    <h5><%= @group.name %></h5>
+    <h5><%= group.name %></h5>
   </div>
-  <%= turbo_frame_tag dom_id(@group), src: 'groups/show' %>
+  <%= turbo_frame_tag dom_id(group), src: group_path(group) %>
 </div>
