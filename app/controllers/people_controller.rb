@@ -9,6 +9,10 @@ class PeopleController < ApplicationController
     @group = Group.find(params[:group_id])
   end
 
+  def show
+    @person = Person.find(params[:id])
+  end
+
   def create
     @person = Person.new(person_params)
     group = Group.find(params[:group_id])
@@ -26,14 +30,9 @@ class PeopleController < ApplicationController
   def update
   end
 
-  def adults
+  def people
     @group = Group.find(params[:group_id])
-    @people = @group.people.select { |person| person.adult? }
-  end
-
-  def kids
-    @group = Group.find(params[:group_id])
-    @people = @group.people.select { |person| person.kid? }
+    @people = @group.people
   end
 
   private

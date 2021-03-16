@@ -4,9 +4,9 @@ class GroupsController < ApplicationController
   def index
     @group = Group.new
     if params[:query].present?
-      @groups = Group.where("name ILIKE ?", "%#{params[:query]}%").includes(people: { photo_attachment: :blob } )
+      @groups = Group.where("name ILIKE ?", "%#{params[:query]}%")
     else
-      @groups = Group.includes(people: { photo_attachment: :blob } ).sort_by(&:name)
+      @groups = Group.all
     end
   end
 

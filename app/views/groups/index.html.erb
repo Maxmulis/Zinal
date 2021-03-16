@@ -13,10 +13,14 @@
 
     <div class="groups col-12 col-lg-8">
       <div class="row">
-        <%= turbo_stream_from "groups" %>
-        <%= turbo_frame_tag "groups" do %>
-            <%= render partial: 'groups/group', collection: @groups %>
-        <% end %>
+        <%#= turbo_frame_tag "groups" do %>
+          <%#= turbo_stream_from "groups" %>
+            <% @groups.each do |group| %>
+            <div class="card-white-small text-center">
+              <%= turbo_frame_tag dom_id(group), src: group_path(group) %>
+            </div>
+            <% end %>
+        <%# end %>
       </div>
     </div>
 
