@@ -15,4 +15,8 @@ class Person < ApplicationRecord
     age >= 18
   end
 
+  def kid?
+    age < 18
+  end
+
 end

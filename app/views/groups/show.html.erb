@@ -1,0 +1,12 @@
+<%= turbo_frame_tag dom_id(@group) do %>
+    <%= link_to "Info", group_path(@group), class: "btn btn-primary active" %>
+    <%= link_to "Menschen", group_people_path(@group), class: "btn btn-primary" %>
+    <div class="card-address">
+      <h3><%= @group.name %></h3>
+      <p><%= @group.street %> <%= @group.number %></p>
+      <p><%= @group.zip %> <%= @group.town %></p>
+      <%= link_to(edit_group_path(@group)) do  %>
+        <i class="far fa-edit"></i>
+      <% end %>
+    </div>
+<% end %>

@@ -4,9 +4,9 @@ class GroupsController < ApplicationController
   def index
     @group = Group.new
     if params[:query].present?
-      @groups = Group.where("name ILIKE ?", "%#{params[:query]}%").includes(people: { photo_attachment: :blob } )
+      @groups = Group.where("name ILIKE ?", "%#{params[:query]}%")
     else
-      @groups = Group.includes(people: { photo_attachment: :blob } ).sort_by(&:name)
+      @groups = Group.all
     end
   end
 
@@ -26,12 +26,15 @@ class GroupsController < ApplicationController
   end
 
   def update
-    if @group.update(group_params)
-      redirect_to groups_path(query: @group.name), notice: "#{@group.name.capitalize} wurde aktualisiert!"
-    else
-      render :edit, alert: @group.errors.full_messages
+    respond_to do |format|
+      if @group.update(group_params)
+        format.html { render :show, notice: "#{@group.name.capitalize} wurde aktualisiert!" }
+      else
+        format.html { render :edit, alert: @group.errors.full_messages }
+      end
     end
   end
+
 
   private
 
