@@ -2,7 +2,7 @@
   <h1>Alle Familien</h1>
   <div class="row">
 
-    <div class="col-12 col-lg-8">
+    <div class="form-search col-12">
       <%= form_tag groups_path, method: :get do %>
         <%= text_field_tag :query,
         params[:query],
@@ -10,25 +10,28 @@
         placeholder: "Familie suchen" %>
       <% end %>
     </div>
+  </div>
 
-    <div class="groups col-12 col-lg-8">
+    <div class="groups">
       <div class="row">
+        <div class="d-flex flex-wrap justify-content-center">
         <%#= turbo_frame_tag "groups" do %>
           <%#= turbo_stream_from "groups" %>
             <% @groups.each do |group| %>
-            <div class="card-white-small text-center">
+            <div class="card-white-small">
               <%= turbo_frame_tag dom_id(group), src: group_path(group) %>
             </div>
             <% end %>
         <%# end %>
+
+        </div>
       </div>
     </div>
 
-    <div class="card-white-large form col-lg-4">
+    <!-- <div class="card-white-large form col-lg-4">
       <h3>Neue Familie hinzufügen</h3>
-      <%= render 'groups/group_form' %>
-    </div>
+      <#%= render 'groups/group_form' %>
+    </div> -->
 
   </div>
-</div>
 

@@ -5,6 +5,13 @@
     <% else %>
       <%= cl_image_tag("https://res.cloudinary.com/dxtj8yhxs/image/upload/v1614959650/Avatar-Grey-Account-User-Person-Operating-System-1699635_sgbdoo.png", crop: :thumb, gravity: :face, class: 'avatar-mid') %>
     <% end %>
-    <%= render 'person_form_small' %>
+    <%= simple_form_for @person do |f| %>
+      <%= f.input :firstname %>
+      <%= f.input :birthdate, as: :date, start_year: Date.today.year - 100,
+                                    end_year: Date.today.year,
+                                    order: [:day, :month, :year] %>
+      <%= f.button :submit %>
+    <% end %>
+      <%= link_to('Cancel', group_people_path(@group)) %>
   </div>
 <% end %>

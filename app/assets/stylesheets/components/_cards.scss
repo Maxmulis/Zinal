@@ -4,7 +4,7 @@
   border-radius: 2px;
   display: inline-flex;
   flex-direction: column;
-  min-height: 400px;
+  min-height: 160px;
   margin: 1rem;
   padding: 1rem;
   position: relative;
@@ -17,6 +17,10 @@
   }
 
 
+}
+
+.navigation {
+  display: flex;
 }
 
 .card-address {
@@ -54,7 +58,7 @@
     width: fit-content;
     margin: auto;
     margin-top: 4px;
-    border-top: solid 1px grey;
+    // border-top: solid 1px grey;
   }
 
 .card-white-large {

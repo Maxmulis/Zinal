@@ -4,9 +4,9 @@ class GroupsController < ApplicationController
   def index
     @group = Group.new
     if params[:query].present?
-      @groups = Group.where("name ILIKE ?", "%#{params[:query]}%")
+      @groups = Group.where("name ILIKE ?", "%#{params[:query]}%").sort_by(&:name)
     else
-      @groups = Group.all
+      @groups = Group.all.sort_by(&:name)
     end
   end
 

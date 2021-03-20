@@ -1,10 +1,11 @@
 <%= turbo_frame_tag dom_id(@group) do %>
-  <%= form_for @group do |f| %>
-    <%= f.text_field :name %>
-    <%= f.text_field :street, id: "street_group" %>
-    <%= f.text_field :number %>
-    <%= f.text_field :zip %>
-    <%= f.text_field :town %>
-    <%= f.submit %>
+  <%= simple_form_for @group do |f| %>
+    <%= f.input :name %>
+    <%= f.input :street, id: "street_group" %>
+    <%= f.input :number %>
+    <%= f.input :zip %>
+    <%= f.input :town %>
+    <%= f.submit '✅', class: 'btn'  %>
   <% end %>
+  <%= link_to('❌', group_path(@group), class: 'btn') %>
 <% end %>

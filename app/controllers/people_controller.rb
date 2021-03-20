@@ -28,6 +28,7 @@ class PeopleController < ApplicationController
   end
 
   def edit
+    @group = @person.group
   end
 
   def update
@@ -42,7 +43,7 @@ class PeopleController < ApplicationController
 
   def people
     @group = Group.find(params[:group_id])
-    @people = @group.people
+    @people = @group.people.includes(photo_attachment: :blob)
   end
 
   private

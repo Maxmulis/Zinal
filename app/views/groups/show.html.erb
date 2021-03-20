@@ -1,6 +1,13 @@
 <%= turbo_frame_tag dom_id(@group) do %>
-    <%= link_to "Info", group_path(@group), class: "btn btn-primary active" %>
-    <%= link_to "Menschen", group_people_path(@group), class: "btn btn-primary" %>
+    <div class="d-flex justify-content-center">
+    <%= link_to "Info", group_path(@group), class: "btn btn-lg btn-primary active" %>
+    <%= link_to group_people_path(@group) do %>
+      <button class="btn btn-lg btn-primary">
+        <%= @group.people.size %> <i class="fas fa-users"></i>
+      </button>
+    </div>
+    <% end %>
+
     <div class="card-address">
       <h3><%= @group.name %></h3>
       <p><%= @group.street %> <%= @group.number %></p>
