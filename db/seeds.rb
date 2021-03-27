@@ -1,8 +1,8 @@
 
 
 URL = 'https://randomuser.me/api/?results='
-people_amount = 120
-group_amount = 30
+people_amount = 8
+group_amount = 3
 people_json = HTTParty.get(URL + people_amount.to_s)
 PEOPLE = JSON.parse(people_json.body)
 
