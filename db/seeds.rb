@@ -7,8 +7,8 @@ people_json = HTTParty.get(URL + people_amount.to_s)
 PEOPLE = JSON.parse(people_json.body)
 
 
-Person.destroy_all
 Group.destroy_all
+Person.destroy_all
 User.destroy_all
 
 User.create(email: 'test@zinal.ch', password: 'zinal2021')

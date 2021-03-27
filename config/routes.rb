@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'groups#index'
+  root to: 'pages#home'
   devise_for :users
   resources :groups, only: [ :index, :new, :create, :show, :edit, :update ] do
     get 'people', to: 'people#people', as: 'people'
