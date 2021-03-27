@@ -1,4 +1,5 @@
 <%= turbo_frame_tag dom_id(@group) do %>
+  <h3><%= @group.name %></h3>
     <div class="d-flex justify-content-center">
     <%= link_to "Info", group_path(@group), class: "btn btn-lg btn-primary active" %>
     <%= link_to group_people_path(@group) do %>
@@ -8,8 +9,7 @@
     </div>
     <% end %>
 
-    <div class="card-address">
-      <h3><%= @group.name %></h3>
+    <div class="card-address mt-3">
       <p><%= @group.street %> <%= @group.number %></p>
       <p><%= @group.zip %> <%= @group.town %></p>
       <%= link_to(edit_group_path(@group)) do  %>
