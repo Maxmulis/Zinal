@@ -39,6 +39,7 @@ gem 'faker'
 gem 'json'
 gem 'httparty'
 gem 'open-uri'
+gem 'paper_trail'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'

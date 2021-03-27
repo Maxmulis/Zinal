@@ -4,6 +4,7 @@ class Person < ApplicationRecord
   belongs_to :group
   validates :firstname, presence: true
   has_one_attached :photo
+  has_paper_trail
 
   def age
     now = Date.today

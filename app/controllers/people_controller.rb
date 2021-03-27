@@ -1,5 +1,6 @@
 class PeopleController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_paper_trail_whodunnit
   before_action :set_person, only: [ :show, :edit, :update ]
   def index
     @people = Person.includes(:group).sort_by { |person| person.group.name }

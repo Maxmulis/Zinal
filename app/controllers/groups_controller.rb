@@ -1,8 +1,10 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [ :show, :edit, :update ]
+  before_action :set_paper_trail_whodunnit
   before_action :authenticate_user!
   def index
     @group = Group.new
+    @changes = Group.all.sort_by
     if params[:query].present?
       @groups = Group.where("name ILIKE ?", "%#{params[:query]}%").sort_by(&:name)
     else
